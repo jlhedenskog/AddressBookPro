@@ -1,0 +1,62 @@
+﻿@model Address_Book_Pro.Models.Address
+@using Address_Book_Pro.Utilities
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="row">
+    <div class="col">
+    <div class="card">
+        <div class="card-header">Information</div>
+        <div class="card-body text-center">
+            <div class="row">
+                <div class="col-sm-10 d-flex justify-content-center">
+                    <img height="75" width="75" class="img-fluid rounded-circle" src="@(Model.Avatar != null ? AvatarHelper.GetImage(Model.Avatar, Model.FileName) : "../../Images/icons8-cat-profile-50.png")" />
+                </div>
+
+            </div>
+
+            <div class="col-sm-10">
+                <i class="fas fa-user"></i>
+                @Model.FirstName @Model.LastName
+            </div>
+
+            <div class="col-sm-10">
+                <i class="fas fa-birthday-cake"></i>
+                @Html.DisplayFor(model => model.Birthday)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+
+
+            <div class="col-sm-10">
+                @Model.Address1
+            </div>
+
+            <div class="col-sm-10">
+                @Model.Address2
+            </div>
+
+            <div class="col-sm-10">
+                @Model.City, @Model.State @Model.ZipCode
+            </div>
+
+
+
+
+
+
+            <div class="col-sm-10">
+                <i class="fas fa-phone"></i>
+                @Html.DisplayFor(model => model.Phone)
+            </div>
+
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.DateAdded)
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
